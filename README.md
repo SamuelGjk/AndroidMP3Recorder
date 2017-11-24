@@ -1,5 +1,11 @@
 AndroidMP3Recorder
 ==================
+# 说明
+在原项目基础上增加了暂停功能([实现方式](https://github.com/SamuelGjk/AndroidMP3Recorder/commit/82916f7210197589aa9e9ca2011a0cba83b96e40) )，因为原项目已停止维护所以不提 PR 了
+
+感谢原作者提供这么方便的项目
+
+---
 
 为Android提供MP3录音功能
 
@@ -35,12 +41,22 @@ dependencies {
 	```java
 	mRecorder.stop();
 	```
+4. 暂停录音： 调用MP3Recorder对象的pause()方法。
+
+	```java
+	mRecorder.pause();
+	```
+5. 恢复录音： 调用MP3Recorder对象的resume()方法。
+
+	```java
+	mRecorder.resume();
+	```
 
 代码示例见：AndroidMP3RecorderSample
 # 3. 关于音量部分的解释
 音量的计算，来自于 [三星开发者文档-Displaying Sound Volume in Real-Time While Recording](http://developer.samsung.com/technical-doc/view.do?v=T000000086)    
 里面对于音量的最大值设置为了4000，而我实际测验中发现大部分声音不超过2000，所以就在代码中暂时设置为2000。  
-这方面没有找到相关资料，如果有人知道理论值之类的，请联系我(chentong.think@gmail.com) 完善此库，谢谢。
+这方面没有找到相关资料，~~如果有人知道理论值之类的，请联系我(chentong.think@gmail.com) 完善此库，谢谢。~~
 
 # 4. 关于so库的声明
 so库本身没有任何限制，但受限于Android NDK的支持 

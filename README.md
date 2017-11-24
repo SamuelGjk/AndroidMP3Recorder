@@ -20,8 +20,16 @@ AndroidMP3Recorder
 ## 集成到项目中
 
 ```Groovy
+allprojects {
+	repositories {
+		...
+		maven { url 'https://jitpack.io' }
+	}
+}
+```
+```Groovy
 dependencies {
-    compile 'com.czt.mp3recorder:library:1.0.4'
+    implementation 'com.github.SamuelGjk:AndroidMP3Recorder:v1.0.5'
 }
 ```
 
